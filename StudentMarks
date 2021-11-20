@@ -1,0 +1,102 @@
+# The average score of class
+
+def avgMarks(stud, nos):
+    sum = 0
+    for i in range(nos):
+        sum += stud[i]
+    avg = sum/nos
+    return (avg)
+
+# Highest score of class
+
+def maxMarks(stud, nos):
+    max = 0
+    for i in range(nos):
+        if max<stud[i]:
+            max = stud[i]
+
+    return max
+
+# lowest score of class
+
+def minMarks(stud, nos):
+    min = stud[0]
+    for i in range(nos):
+        if min>stud[i]:
+            min = stud[i]
+
+    return min
+
+# Display mark with highest frequency
+
+def maxFreq(nos, stud):
+    count = 0
+    check = maxMarks(stud, nos)
+    
+    for i in range(nos):
+        if check == stud[i]:
+            count += 1
+    return count
+
+# Display mark with lowest frequency
+
+def minFreq(nos, stud):
+    count = 0
+    check = minMarks(stud, nos)
+    
+    for i in range(nos):
+        if check == stud[i]:
+            count += 1
+    return count
+
+# Count of students who were absent for the test
+
+def absentStud(stud, nos):
+    count = 0
+    for i in range(nos):
+        if stud[i]==0:
+            count +=1
+    return count       
+
+# Driver Code
+
+stud = []   
+nos = int(input("Enter No. of Student : "))
+count = 1    
+for i in range(nos):
+    marks = int(input(f"Enter marks for student {count} : "))
+    stud.append(marks)
+    count+=1
+print("------------------------------------------------","\n")
+print("Average marks obtained by student is: ",avgMarks(stud, nos),"\n")
+print("Maximum marks obtained by student is: ",maxMarks(stud, nos),"\n")
+print("Minimum marks obtained by student is: ",minMarks(stud, nos),"\n")
+print("Number of absent student are: ", absentStud(stud, nos),"\n")
+print(maxMarks(stud, nos)," is largest marks and its frequency is: ",maxFreq(nos, stud),"\n")
+print(minMarks(stud, nos)," is minimum marks and its frequency is: ",minFreq(nos, stud),"\n")
+
+
+
+
+# Output:
+
+#Enter No. of Student : 5
+#Enter marks for student 1 : 45
+#Enter marks for student 2 : 49
+#Enter marks for student 3 : 50
+#Enter marks for student 4 : 39
+#Enter marks for student 5 : 45
+#------------------------------------------------ 
+
+#Average marks obtained by student is:  45.6 
+
+#Maximum marks obtained by student is:  50 
+
+#Minimum marks obtained by student is:  39 
+
+#Number of absent student are:  0 
+
+#50  is largest marks and its frequency is:  1 
+
+#39  is minimum marks and its frequency is:  1 
+
